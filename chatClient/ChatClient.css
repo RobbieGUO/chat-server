@@ -1,0 +1,63 @@
+﻿* { box-sizing: border-box }
+html { height: 100%; }
+body { font-family: Verdana,Geneva,sans-serif; font-size: 15px; margin: 0px; padding: 10px; height: 100%; background-color: #F0F0F0; color: #000000; display: flex; flex-direction: row; justify-content: center; }
+input { font-family: Verdana,Geneva,sans-serif; font-size: 15px; margin: 0px; line-height: 1em; height: 25px; padding: 1px 1px 2px 1px; }
+
+*[disabled] > * { pointer-events: none; opacity: 0.5; }
+
+#outer { background-color: #FFFFFF; min-width: 300px; width: 50%; border: 1px solid #A0A0A0; border-radius: 4px; display: flex; flex-direction: column; }
+#outer > div { padding: 6px; border-bottom: 1px solid #A0A0A0; }
+#outer > div:last-child { padding: 4px; border-bottom: 0px; }
+
+#header { font-size: 120%; display: flex; }
+
+#connect { display: flex; }
+#connect > span { padding-top: 3px; margin-right: 4px; }
+#serverInput { flex: 1; margin-right: 4px; }
+#connectButton { width: 100px; }
+
+#disconnect { display: none; }
+#disconnect > span { padding-top: 3px; }
+#disconnectButton { width: 100px; }
+
+#login { display: flex; }
+#login > span { padding-top: 3px; margin-right: 4px; }
+#nameInput { flex: 1; margin-right: 4px; }
+#passwordInput { flex: 1; margin-right: 4px; }
+#loginButton { width: 100px; }
+
+#message { display: flex; }
+#messageInput { flex: 1; }
+#sendButton { margin-left: 4px; }
+
+#userlist { min-height: 32px; color: #006000; }
+#userlist > span:after { content: ", "; }
+span.user-name:after { content: " "; }
+span.user-desc { font-size: 80%; }
+span.user-desc:before { content: "("; }
+span.user-desc:after { content: ")"; }
+#userlist > span:last-child:after { content: ""; }
+#userlist > span.userlist-title { color: #000000; }
+#userlist > span.userlist-title:before { content: "Users online: "; }
+#userlist[disabled] > span.userlist-title:before { content: "Not logged in."; }
+#userlist > span.userlist-title:after { content: " "; }
+#userlist > span.userlist-title:only-child:after { content: " none"; }
+#userlist[disabled] > span.userlist-title:only-child:after { content: ""; }
+
+#msglist { flex: 1; overflow-y: scroll; }
+div.info { margin: 8px; color: #808080; font-style: italic; }
+div.sent { margin: 8px; margin-left: 32px; }
+div.sent > div.from { text-align: right; }
+div.sent > div.message { background-color: #F0F0FF; }
+div.received { margin: 8px; margin-right: 32px; }
+div.received > div.from {  }
+div.received > div.message { background-color: #D0D0FF; }
+div.from { font-size: 95%; font-style: italic; margin: 5px; margin-bottom: 0px; }
+div.message { border-radius: 4px; padding: 4px 4px 5px 4px; }
+div.readers { font-size: 67%; font-style: italic; color: #808080; margin: 4px; margin-top: 0px; }
+div.readers:empty:before { content: "not seen by anyone so far"; }
+div.readers:not(:empty):before { content: "seen by "; }
+div.readers > span:after { content: ", "; }
+div.readers > span:last-child:after { content: ""; }
+
+#statusbar { font-size: 80%; }

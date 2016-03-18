@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="ChatClient.css">
+	<script type="text/javascript" src="ChatClient_68.js"></script>
+	<script type="text/javascript" src="ChatClient.js"></script>
+	<script type="text/javascript">
+		document.addEventListener("DOMContentLoaded", main);
+	</script>
+</head>
+<body>
+
+<div id="outer">
+	<div id="header">
+		<span style="flex: 1">WebSocket Chat Client</span>
+		<span style="color: #808080;" id="groupid"></span>
+	</div>
+	<div id="connect">
+		<span style="width: 7ex;">Server:</span>
+		<input id="serverInput" type="text" value="modestchecker.net" />
+		<input id="connectButton" type="button" value="Connect" onclick="javascript:connectButtonPressed();" />
+	</div>
+	<div id="disconnect">
+		<span id="connectionStatusText" style="flex: 1;">Connected.</span>
+		<input id="disconnectButton" type="button" value="Disconnect" onclick="javascript:disconnectButtonPressed();" />
+	</div>
+	<div id="login" disabled="true">
+		<span style="width: 7ex;">Login:</span>
+		<input id="nameInput" type="text" value="Jinghao" style="width: 120px;" />
+		<input id="passwordInput" type="password" value="EW5s7JeH" style="width: 120px;" />
+		<input id="loginButton" type="button" value="Log in" onclick="javascript:loginButtonPressed();" />
+	</div>
+	<div id="message" disabled="true">
+		<input id="messageInput" type="text" value="Message" style="width: 248px;" />
+		<input id="sendButton" type="button" value="Send" style="width: 100px;" onclick="javascript:sendButtonPressed();" />
+	</div>
+	<div id="userlist" disabled="true"><span class="userlist-title"></span></div>
+	<div id="msglist">
+		<!--<div class="sent">
+			<div class="from">My name</div>
+			<div class="message">Message sent</div>
+			<div class="readers"></div>
+		</div>
+		<div class="info">
+			Informational message
+		</div>
+		<div class="received">
+			<div class="from">Sender's name</div>
+			<div class="message">Message received</div>
+		</div>-->
+	</div>
+	<div id="statusbar">
+		Not connected.
+	</div>
+</div>
+
+
+</body>
+</html>
